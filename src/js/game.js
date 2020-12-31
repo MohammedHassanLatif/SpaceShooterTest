@@ -3,7 +3,7 @@ var game = new Phaser.Game(800,600, Phaser.AUTO, 'phaser-demo',
         create: create,
         update: update,
         render: render}
-        );
+);
 
 var player;
 var greenEnemies;
@@ -42,19 +42,19 @@ var DRAG = 400;
 var MAXSPEED = 400;
 
 function preload() {
-    game.load.image('enemy-green', './assets/asteroid.png');
-    game.load.image('blueEnemyBullet', './assets/enemy-blue-bullet.png');
-    game.load.spritesheet('explosion', './assets/explode.png', 128, 128);
-    game.load.bitmapFont('spacefont', './assets/spacefont/spacefont.png', './assets/spacefont/spacefont.xml');
-    game.load.image('deathRay', './assets/death-ray.png');
+    game.load.image('enemy-green', './assets/images/asteroid.png');
+    game.load.image('blueEnemyBullet', './assets/images/enemy-blue-bullet.png');
+    game.load.spritesheet('explosion', './assets/images/explode.png', 128, 128);
+    game.load.bitmapFont('spacefont', './assets/fonts/spacefont/spacefont.png', './assets/fonts/spacefont/spacefont.xml');
+    game.load.image('deathRay', './assets/images/death-ray.png');
 
     //load custom images
-    game.load.image('player', './assets/player.png');
-    game.load.image('background', './assets/alt-background-1.jpg');
-    game.load.image('bullet', './assets/red-bullet.gif');
-    game.load.image('enemy-blue', './assets/alien-ship.png');
-    game.load.image('boss', './assets/boss.png');
-    game.load.spritesheet('fullscreen', 'assets/fullscreen.png', { frameWidth: 64, frameHeight: 64});
+    game.load.image('player', './assets/images/player.png');
+    game.load.image('background', './assets/images/alt-background-1.jpg');
+    game.load.image('bullet', './assets/images/red-bullet.gif');
+    game.load.image('enemy-blue', './assets/images/alien-ship.png');
+    game.load.image('boss', './assets/images/boss.png');
+    game.load.spritesheet('fullscreen', 'assets/images/fullscreen.png', { frameWidth: 64, frameHeight: 64});
 }
 
 function create() {
@@ -361,9 +361,9 @@ function create() {
     gameOver.y = gameOver.y - gameOver.textHeight / 3;
     gameOver.visible = false;
 }
-    var button = this.add.image(800-16, 16, 'fullscreen', 0).setOrigin(1, 0).setInteractive();
+var button = this.add.image(800-16, 16, 'fullscreen', 0).setOrigin(1, 0).setInteractive();
 
-    button.on('pointerup', function () {
+button.on('pointerup', function () {
 
     if (this.scale.isFullscreen)
     {
@@ -378,13 +378,13 @@ function create() {
         this.scale.startFullscreen();
     }
 
-    }, this);
+}, this);
 
-    this.scoreText.setText('v15');
+this.scoreText.setText('v15');
 
-    var FKey = this.input.keyboard.addKey('F');
+var FKey = this.input.keyboard.addKey('F');
 
-    FKey.on('down', function () {
+FKey.on('down', function () {
 
     if (this.scale.isFullscreen)
     {
@@ -397,7 +397,7 @@ function create() {
         this.scale.startFullscreen();
     }
 
-    }, this);
+}, this);
 
 function update() {
     //  Scroll the background
