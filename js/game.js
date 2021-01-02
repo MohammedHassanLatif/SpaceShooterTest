@@ -1,12 +1,45 @@
-var game = new Phaser.Game(800,600, Phaser.AUTO, 'SpaceShooter',
-    {
-        preload: preload,
-        create: create,
-        update: update,
-        render: render
-    }
-);
+var config = {
+    type: Phaser.AUTO,
+    width: canvasWidth,
+    height: canvasHeight,
 
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: {
+                x: 0,
+                y: 0,
+            },
+        }
+    },
+};
+    // scene: [ MenuScene, CheckPointScene,  LevelScene, PauseScene ]
+
+    let canvasWidth = 800;
+
+    /**
+     * Height of the canvas.
+     * @type {int}
+     */
+    let canvasHeight = 600;
+
+    /**
+     * Middle of the screen.
+     * @type {int}
+     */
+    /**
+     * Middle of the screen.
+     * @type {int}
+     */
+    let canvasHeightMiddle = (canvasHeight) / 2;
+
+//Initialisation of the game.
+var game = new Phaser.Game(config);
+
+// //Initialisation of the game.
+// var game = new Phaser.Game(config);
+
+//Declaring game items
 var player;
 var greenEnemies;
 var blueEnemies;
@@ -44,19 +77,19 @@ var DRAG = 400;
 var MAXSPEED = 400;
 
 function preload() {
-    game.load.image('enemy-green', './assets/images/asteroid.png');
-    game.load.image('blueEnemyBullet', './assets/images/enemy-blue-bullet.png');
-    game.load.spritesheet('explosion', './assets/images/explode.png', 128, 128);
-    game.load.bitmapFont('spacefont', './assets/fonts/spacefont/spacefont.png', './assets/fonts/spacefont/spacefont.xml');
-    game.load.image('deathRay', './assets/images/death-ray.png');
+    game.load.image('enemy-green', './assets/asteroid.png');
+    game.load.image('blueEnemyBullet', './assets/enemy-blue-bullet.png');
+    game.load.spritesheet('explosion', './assets/explode.png', 128, 128);
+    game.load.bitmapFont('spacefont', './assets/spacefont/spacefont.png', './assets/spacefont/spacefont.xml');
+    game.load.image('deathRay', './assets/death-ray.png');
 
     //load custom images
-    game.load.image('player', './assets/images/player.png');
-    game.load.image('background', './assets/images/alt-background-1.jpg');
-    game.load.image('bullet', './assets/images/red-bullet.gif');
-    game.load.image('enemy-blue', './assets/images/alien-ship.png');
-    game.load.image('boss', './assets/images/boss.png');
-    // game.load.spritesheet('fullscreen', 'assets/fullscreen.png', { frameWidth: 64, frameHeight: 64});
+    game.load.image('player', './assets/player.png');
+    game.load.image('background', './assets/alt-background-1.jpg');
+    game.load.image('bullet', './assets/red-bullet.gif');
+    game.load.image('enemy-blue', './assets/alien-ship.png');
+    game.load.image('boss', './assets/boss.png');
+    game.load.spritesheet('fullscreen', 'assets/fullscreen.png', { frameWidth: 64, frameHeight: 64});
 }
 
 function create() {
