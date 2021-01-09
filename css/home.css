@@ -1,3 +1,4 @@
+/*
 table, th, td {
     border: 1px solid cornflowerblue;
     color: #e1e114;
@@ -7,13 +8,13 @@ body, html {
 }
 
 .bg {
-    /* The image used */
-    background-image: url("../assets/images/background/Background.jpg");
+    !* The image used *!
+    background-image: url("../assets/images/background.png");
 
-    /* Full height */
+    !* Full height *!
     height: 100%;
 
-    /* Center and scale the image nicely */
+    !* Center and scale the image nicely *!
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -47,7 +48,7 @@ li {
 
 #menu {
     border: 5px outset red;
-    /*background-color: black;*/
+    !*background-color: black;*!
     text-align: left;
     margin-left: 10px;
     margin-top: 10px;
@@ -61,7 +62,7 @@ li {
 
 #summary {
     border: 5px outset red;
-    /*background-color: black;*/
+    !*background-color: black;*!
     max-width: 500px;
     text-align: left;
     margin-left: 10px;
@@ -75,7 +76,7 @@ li {
 
 #about {
     border: 5px outset red;
-    /*background-color: black;*/
+    !*background-color: black;*!
     max-width: 500px;
     text-align: left;
     margin-left: 10px;
@@ -146,7 +147,7 @@ li {
 }
 
 #scrollbutton:hover {
-    background-color: #555; /* Add a dark-grey background on hover */
+    background-color: #555; !* Add a dark-grey background on hover *!
 }
 
 #space-shooter-game
@@ -160,12 +161,12 @@ li {
     border-width: 2px;
 }
 
-/*iframe {
+!*iframe {
     border: 5px inset greenyellow;
     margin-left: 10px;
-}*/
+}*!
 
-/*img {
+!*img {
     border: 5px inset white;
     border-style: ridge;
     margin-left: 10px;
@@ -174,4 +175,4 @@ li {
     display: block;
     max-height: 70%;
     max-width: 70%;
-}*/
+}*!*/
